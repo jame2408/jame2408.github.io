@@ -98,7 +98,7 @@ Step3 : 安裝Hexo
   var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Pisces',
-    sidebar: {"position":"left","display":"post"},
+    sidebar: {"position":"left","display":"hide"},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -163,9 +163,15 @@ Step3 : 安裝Hexo
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
-            
             首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            關於
           </a>
         </li>
       
@@ -173,19 +179,7 @@ Step3 : 安裝Hexo
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
-            
             歸檔
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
-            
-            標籤
           </a>
         </li>
       
@@ -406,10 +400,10 @@ Step3 : 安裝Hexo
 
           
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
+              
                 <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">標籤</span>
-              </a>
+              
             </div>
           
 
