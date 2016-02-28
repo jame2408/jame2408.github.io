@@ -275,9 +275,9 @@
           <h1 id="建立文章"><a href="#建立文章" class="headerlink" title="建立文章"></a>建立文章</h1><p>可以利用以下語法，新增MD檔：<br><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hexo new <span class="string">[文章類型]</span> <span class="string">[檔名]</span></span><br></pre></td></tr></table></figure></p>
 <p>文章類型：</p>
 <ul>
-<li>post：一般的文章，新增的檔案會放在<code>~\source\_posts</code>資料夾內建立[檔名].md的檔案。- </li>
-<li>page：不會出現在首頁中，基本上拿來撰寫<code>about</code>或<code>tags</code>之類的頁面。這類型會在<code>~\source\</code>下建立[檔名]資料夾，並在[檔名]資料夾下新增index.md檔案。</li>
-<li>draft：草稿，如果文章太長可以先建立草稿，這樣就算發佈了訪客也看不到。草稿會存放在<code>~\source\_drafts</code>底下，檔名為[檔名].md。等編輯完後，透過指令<code>hexo publish draft [檔名]</code>讓文章公開。</li>
+<li><strong>post</strong>：一般的文章，新增的檔案會放在<code>~\source\_posts</code>資料夾內建立[檔名].md的檔案。- </li>
+<li><strong>page</strong>：不會出現在首頁中，基本上拿來撰寫<code>about</code>或<code>tags</code>之類的頁面。這類型會在<code>~\source\</code>下建立[檔名]資料夾，並在[檔名]資料夾下新增index.md檔案。</li>
+<li><strong>draft</strong>：草稿，如果文章太長可以先建立草稿，這樣就算發佈了訪客也看不到。草稿會存放在<code>~\source\_drafts</code>底下，檔名為[檔名].md。等編輯完後，透過指令<code>hexo publish draft [檔名]</code>讓文章公開。</li>
 </ul>
 <p>再來選擇一款合適自己的MD編輯器與使用MD語法就能完成一篇文章了。</p>
 <h1 id="文章格式"><a href="#文章格式" class="headerlink" title="文章格式"></a>文章格式</h1><p>Hexo是使用MarkDown(MD)格式，每篇文章開頭基本上都為：<br><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">title</span>: <span class="string">標題</span></span><br><span class="line"><span class="attribute">date</span>: <span class="string">撰寫日期</span></span><br><span class="line"><span class="attribute">tags</span>: <span class="string">標籤</span></span><br><span class="line"></span><br><span class="line"><span class="applescript"><span class="comment">---</span></span></span><br></pre></td></tr></table></figure></p>
