@@ -76,7 +76,7 @@ draft：草稿，如果文">
 <meta property="og:image" content="http://i.imgur.com/Bt03fuv.png">
 <meta property="og:image" content="http://i.imgur.com/Bt03fuv.png">
 <meta property="og:image" content="http://i.imgur.com/Bt03fuv.png">
-<meta property="og:updated_time" content="2016-02-29T01:38:13.433Z">
+<meta property="og:updated_time" content="2016-02-29T12:39:42.993Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo-開始撰寫文章">
 <meta name="twitter:description" content="建立文章可以利用以下語法，新增MD檔：1Hexo new [文章類型] [檔名]
@@ -311,13 +311,20 @@ draft：草稿，如果文">
 </ul>
 <hr>
 <ul>
-<li>文字置中：<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">center</span>&gt;</span>置中<span class="tag">&lt;/<span class="title">center</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<li><p>文字置中：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">center</span>&gt;</span>置中<span class="tag">&lt;/<span class="title">center</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<center>置中</center>
 </li>
 </ul>
-<center>置中</center>
-
 <hr>
-<p>  &emsp;&emsp;相信看到這邊，懂CSS的人應該就知道要如何自由改變文字樣式了！歡迎大家多多嘗試，有測試出任何好玩的格式，可以留言告知一下，大家交流一下。</p>
+<ul>
+<li><p>刪除線：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">font</span> <span class="attribute">style</span>=<span class="value">"text-decoration:line-through"</span>&gt;</span>刪除線<span class="tag">&lt;/<span class="title">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<font style="text-decoration:line-through">我被刪除了！</font>
+</li>
+</ul>
+<hr>
+<p>  相信看到這邊，懂CSS的人應該就知道要如何自由改變文字樣式了！歡迎大家多多嘗試，有測試出任何好玩的格式，可以留言告知一下，大家交流一下。</p>
 <h2 id="縮排"><a href="#縮排" class="headerlink" title="縮排"></a>縮排</h2><p>相信有些人在排版上，希望一段文字首行要空兩個全形空白。</p>
 <ul>
 <li>半形空白：<code>&amp;ensp;</code></li>
@@ -333,7 +340,7 @@ draft：草稿，如果文">
 <p>如果希望控制圖片大小，這樣就要使用<code>&lt;img&gt;</code> tag了：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;center&gt;&lt;<span class="tag">img</span> src=<span class="string">"http://i.imgur.com/Bt03fuv.png"</span> <span class="attribute">width</span>=<span class="string">"150"</span> <span class="attribute">height</span>=<span class="string">"100"</span> alt=<span class="string">"hexo x github"</span>/&gt;&lt;/center&gt;</span><br></pre></td></tr></table></figure></p>
 <center><img src="http://i.imgur.com/Bt03fuv.png" width="150" height="100" alt="hexo x github"></center>
 
-<h2 id="設定首頁文章有『繼續閱讀』功能"><a href="#設定首頁文章有『繼續閱讀』功能" class="headerlink" title="設定首頁文章有『繼續閱讀』功能"></a>設定首頁文章有『繼續閱讀』功能</h2><p>&emsp;&emsp;繼續閱讀：在部落格首頁時，會將每篇文章以全文方式顯示，但有些文章太長了，導致要拖拉很久才能找到下一篇。只要在內文中，使用<code>&lt;!-- more --&gt;</code>（記得more前後都要空一格），首頁文章就會只顯示到此行，訪客要自行點選more才能觀看全文。</p>
+<h2 id="設定首頁文章有『繼續閱讀』功能"><a href="#設定首頁文章有『繼續閱讀』功能" class="headerlink" title="設定首頁文章有『繼續閱讀』功能"></a>設定首頁文章有『繼續閱讀』功能</h2><p>繼續閱讀：在部落格首頁時，會將每篇文章以全文方式顯示，但有些文章太長了，導致要拖拉很久才能找到下一篇。只要在內文中，使用<code>&lt;!-- more --&gt;</code>（記得more前後都要空一格），首頁文章就會只顯示到此行，訪客要自行點選more才能觀看全文。</p>
 
       
     </div>
