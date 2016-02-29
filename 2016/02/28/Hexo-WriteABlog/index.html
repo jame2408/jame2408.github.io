@@ -76,7 +76,7 @@ draft：草稿，如果文">
 <meta property="og:image" content="http://i.imgur.com/Bt03fuv.png">
 <meta property="og:image" content="http://i.imgur.com/Bt03fuv.png">
 <meta property="og:image" content="http://i.imgur.com/Bt03fuv.png">
-<meta property="og:updated_time" content="2016-02-28T15:24:21.194Z">
+<meta property="og:updated_time" content="2016-02-29T00:43:02.006Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo-開始撰寫文章">
 <meta name="twitter:description" content="建立文章可以利用以下語法，新增MD檔：1Hexo new [文章類型] [檔名]
@@ -287,9 +287,9 @@ draft：草稿，如果文">
 <li><strong>draft</strong>：草稿，如果文章太長可以先建立草稿，這樣就算發佈了訪客也看不到。草稿會存放在<code>~\source\_drafts</code>底下，檔名為[檔名].md。等編輯完後，透過指令<code>hexo publish draft [檔名]</code>讓文章公開。</li>
 </ul>
 <p>再來選擇一款合適自己的MD編輯器與使用MD語法就能完成一篇文章了。</p>
+<a id="more"></a>
 <h1 id="文章格式"><a href="#文章格式" class="headerlink" title="文章格式"></a>文章格式</h1><p>Hexo是使用MarkDown(MD)格式，每篇文章開頭基本上都為：<br><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">title</span>: <span class="string">標題</span></span><br><span class="line"><span class="attribute">date</span>: <span class="string">撰寫日期</span></span><br><span class="line"><span class="attribute">tags</span>: <span class="string">標籤</span></span><br><span class="line"></span><br><span class="line"><span class="applescript"><span class="comment">---</span></span></span><br></pre></td></tr></table></figure></p>
 <p>然後<code>---</code>底下就是本文部分了，使用MD語法撰寫內容吧！</p>
-<a id="more"></a>
 <h1 id="MD語法"><a href="#MD語法" class="headerlink" title="MD語法"></a>MD語法</h1><p>網路上已經有很多可以參考的資料了，就不班門弄斧，提供一些我覺得不錯的連結給大家參考：</p>
 <ol>
 <li>GIT教學網站(gitbooks)：<a href="https://kingofamani.gitbooks.io/git-teach/content/chapter_6_gitbook/markdown.html" title="gitbooks-markdown風格" target="_blank" rel="external">markdown風格</a></li>
@@ -330,7 +330,7 @@ draft：草稿，如果文">
 <p>如果要控制圖案置中顯示：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="title">center</span>&gt;</span></span>![<span class="link_label">hexo x github</span>](<span class="link_url">http://i.imgur.com/Bt03fuv.png</span>)<span class="xml"><span class="tag">&lt;/<span class="title">center</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
 <center><img src="http://i.imgur.com/Bt03fuv.png" alt="hexo x github"></center>
 
-<p>如果希望控制圖片大小，這樣就要使用<img> tag了：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;center&gt;&lt;<span class="tag">img</span> src=<span class="string">"http://i.imgur.com/Bt03fuv.png"</span> <span class="attribute">width</span>=<span class="string">"150"</span> <span class="attribute">height</span>=<span class="string">"100"</span> alt=<span class="string">"亦菲表演机器猫"</span>/&gt;&lt;/center&gt;</span><br></pre></td></tr></table></figure></p>
+<p>如果希望控制圖片大小，這樣就要使用<img> tag了：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;center&gt;&lt;<span class="tag">img</span> src=<span class="string">"http://i.imgur.com/Bt03fuv.png"</span> <span class="attribute">width</span>=<span class="string">"150"</span> <span class="attribute">height</span>=<span class="string">"100"</span> alt=<span class="string">"hexo x github"</span>/&gt;&lt;/center&gt;</span><br></pre></td></tr></table></figure></p>
 <center><img src="http://i.imgur.com/Bt03fuv.png" width="150" height="100" alt="hexo x github"></center>
 
 <h2 id="設定首頁文章有『繼續閱讀』功能"><a href="#設定首頁文章有『繼續閱讀』功能" class="headerlink" title="設定首頁文章有『繼續閱讀』功能"></a>設定首頁文章有『繼續閱讀』功能</h2><p>&emsp;&emsp;繼續閱讀：在部落格首頁時，會將每篇文章以全文方式顯示，但有些文章太長了，導致要拖拉很久才能找到下一篇。只要在內文中，使用<code>&lt;!-- more --&gt;</code>（記得more前後都要空一格），首頁文章就會只顯示到此行，訪客要自行點選more才能觀看全文。</p>
