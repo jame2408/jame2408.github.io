@@ -76,7 +76,7 @@ draft：草稿，如果文">
 <meta property="og:image" content="http://i.imgur.com/Bt03fuv.png">
 <meta property="og:image" content="http://i.imgur.com/Bt03fuv.png">
 <meta property="og:image" content="http://i.imgur.com/Bt03fuv.png">
-<meta property="og:updated_time" content="2016-02-29T00:43:02.006Z">
+<meta property="og:updated_time" content="2016-02-29T01:38:13.433Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo-開始撰寫文章">
 <meta name="twitter:description" content="建立文章可以利用以下語法，新增MD檔：1Hexo new [文章類型] [檔名]
@@ -326,11 +326,11 @@ draft：草稿，如果文">
 <h2 id="添加空白行"><a href="#添加空白行" class="headerlink" title="添加空白行"></a>添加空白行</h2><p>相信很多人按很多空白鍵或Enter鍵，發現只能空一行(甚至無法加入空白行)。我個人在編輯上會使用<code>&amp;ensp;</code>，利用空白符號進行『添加空白行』的動作唷。</p>
 <h2 id="圖片樣式設定"><a href="#圖片樣式設定" class="headerlink" title="圖片樣式設定"></a>圖片樣式設定</h2><p>MD檔放入圖片語法<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="link_label">圖案文字說明</span>](<span class="link_url">URL</span>)</span><br></pre></td></tr></table></figure></p>
 <p>範例：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="link_label">hexo x github</span>](<span class="link_url">http://i.imgur.com/Bt03fuv.png</span>)</span><br></pre></td></tr></table></figure></p>
-<p><img src="http://i.imgur.com/Bt03fuv.png" alt="hexo x github"></p>
+<p><img src="http://i.imgur.com/Bt03fuv.png" alt="hexo x github"><br>p.s. 我的主題預設圖片就是置中，所以現在看到的圖案應該在中間。如果你的主題圖片預設不是置中，請自行修改設定或使用下一步驟的語法。</p>
 <p>如果要控制圖案置中顯示：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="title">center</span>&gt;</span></span>![<span class="link_label">hexo x github</span>](<span class="link_url">http://i.imgur.com/Bt03fuv.png</span>)<span class="xml"><span class="tag">&lt;/<span class="title">center</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
 <center><img src="http://i.imgur.com/Bt03fuv.png" alt="hexo x github"></center>
 
-<p>如果希望控制圖片大小，這樣就要使用<img> tag了：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;center&gt;&lt;<span class="tag">img</span> src=<span class="string">"http://i.imgur.com/Bt03fuv.png"</span> <span class="attribute">width</span>=<span class="string">"150"</span> <span class="attribute">height</span>=<span class="string">"100"</span> alt=<span class="string">"hexo x github"</span>/&gt;&lt;/center&gt;</span><br></pre></td></tr></table></figure></p>
+<p>如果希望控制圖片大小，這樣就要使用<code>&lt;img&gt;</code> tag了：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;center&gt;&lt;<span class="tag">img</span> src=<span class="string">"http://i.imgur.com/Bt03fuv.png"</span> <span class="attribute">width</span>=<span class="string">"150"</span> <span class="attribute">height</span>=<span class="string">"100"</span> alt=<span class="string">"hexo x github"</span>/&gt;&lt;/center&gt;</span><br></pre></td></tr></table></figure></p>
 <center><img src="http://i.imgur.com/Bt03fuv.png" width="150" height="100" alt="hexo x github"></center>
 
 <h2 id="設定首頁文章有『繼續閱讀』功能"><a href="#設定首頁文章有『繼續閱讀』功能" class="headerlink" title="設定首頁文章有『繼續閱讀』功能"></a>設定首頁文章有『繼續閱讀』功能</h2><p>&emsp;&emsp;繼續閱讀：在部落格首頁時，會將每篇文章以全文方式顯示，但有些文章太長了，導致要拖拉很久才能找到下一篇。只要在內文中，使用<code>&lt;!-- more --&gt;</code>（記得more前後都要空一格），首頁文章就會只顯示到此行，訪客要自行點選more才能觀看全文。</p>
