@@ -76,7 +76,7 @@ draft：草稿，如果文">
 <meta property="og:image" content="http://i.imgur.com/Bt03fuv.png">
 <meta property="og:image" content="http://i.imgur.com/Bt03fuv.png">
 <meta property="og:image" content="http://i.imgur.com/Bt03fuv.png">
-<meta property="og:updated_time" content="2016-02-29T12:39:42.993Z">
+<meta property="og:updated_time" content="2016-03-02T13:31:00.296Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo-開始撰寫文章">
 <meta name="twitter:description" content="建立文章可以利用以下語法，新增MD檔：1Hexo new [文章類型] [檔名]
@@ -318,9 +318,11 @@ draft：草稿，如果文">
 </ul>
 <hr>
 <ul>
-<li><p>刪除線：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">font</span> <span class="attribute">style</span>=<span class="value">"text-decoration:line-through"</span>&gt;</span>刪除線<span class="tag">&lt;/<span class="title">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<font style="text-decoration:line-through">我被刪除了！</font>
+<li><p>刪除線：<br>如果你的編輯器支援<code>github favorite markdown</code>，那刪除寫法：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~~刪除線~~</span><br></pre></td></tr></table></figure>
+<p>效果：<del>刪除線</del><br>若不支援<code>github favorite markdown</code>，也可以用以下寫法：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">del</span>&gt;</span>刪除線<span class="tag">&lt;/<span class="title">del</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><del>我被刪除了！</del></p>
 </li>
 </ul>
 <hr>
