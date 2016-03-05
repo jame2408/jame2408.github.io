@@ -67,7 +67,7 @@
 <meta property="og:description" content="更換主題下載主題到官方網站中，選擇主題，底下就會有很多主題供你挑選。點擊喜歡的主題，進去後會教導如何用指令下載主題。
 更新主題如果發現主題有改版，執行以下指令進行更新主題：12cd themes/[主題資料夾名稱]git pull
 抽換Blog主題下載後，至根目錄下的_config.yml中，找到theme:部分，於分號後空一格放上~\themes\下的資料夾名稱，範例如下：1theme: [主題">
-<meta property="og:updated_time" content="2016-03-05T05:52:46.032Z">
+<meta property="og:updated_time" content="2016-03-05T06:22:32.842Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo-更換主題與基本設定">
 <meta name="twitter:description" content="更換主題下載主題到官方網站中，選擇主題，底下就會有很多主題供你挑選。點擊喜歡的主題，進去後會教導如何用指令下載主題。
@@ -291,13 +291,11 @@
 <ol>
 <li><p><strong>選單</strong>：我的選單有首頁、關於、歸檔、與標籤。所以這四個設定開啟，其餘的註解不使用就好。以標籤為例：</p>
 <ul>
-<li>先於設定檔中開啟標籤（<code>tags: /tags</code>）。</li>
-<li><p>利用語法，新增標籤的頁面</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> page <span class="string">'tags'</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>於<code>~\source\about</code>下，找到index.md檔，可自己修改title，如果你有使用『評論』，於index.md中增加<code>comments: false</code>即可關閉評論。</p>
-</li>
-<li>只要每篇新增的文章，增加tags，系統就會自動抓取目前文章的tags並顯示在標籤頁中。</li>
+<li>step1. 先於設定檔中開啟標籤（<code>tags: /tags</code>）。</li>
+<li>step2. 利用語法，新增標籤的頁面  <pre><code>hexo new page &apos;tags&apos;
+</code></pre></li>
+<li>step3. 於<code>~\source\about</code>底下，找到index.md，除了可以自己修改title外，如果你有使用評論，於index.md中增加<code>comments: false</code>即可關閉評論。</li>
+<li>step4. 只要每篇新增的文章，增加tags，系統就會自動抓取目前文章的tags並顯示在標籤頁中。</li>
 </ul>
 </li>
 <li><strong>程式碼區塊樣式</strong>：找到<code># Code Highlight theme</code>，我個人設定為黑色背景。</li>
