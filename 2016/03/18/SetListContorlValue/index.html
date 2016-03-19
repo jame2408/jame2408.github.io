@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo," />
+  <meta name="keywords" content="Web Form," />
 
 
 
@@ -57,22 +57,40 @@
 
 
 
-<meta name="description" content="更換主題下載主題到官方網站中，選擇主題，底下就會有很多主題供你挑選。點擊喜歡的主題，進去後會教導如何用指令下載主題。
-更新主題如果發現主題有改版，執行以下指令進行更新主題：12cd themes/[主題資料夾名稱]git pull
-抽換Blog主題下載後，至根目錄下的_config.yml中，找到theme:部分，於分號後空一格放上~\themes\下的資料夾名稱，範例如下：1theme: [主題">
+<meta name="description" content="清單控制項常見的問題
+『xx擁有的SelectedValue無效，因為它不在項目清單中。』
+
+這個錯誤訊息很常見，可能原因有：
+
+看起來一樣，但「清單控制項」或「DB」的值藏有空白字元。
+「清單控制項」與「DB」的值對不起來，譬如「DB」有xxx資料但是「清單控制項」沒有xxx資料。
+
+此外，還有DataBind前就去SelectedValue數值…等原因。會寫這篇文章，主要是剛好看到公司內部系統">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo-更換主題與基本設定">
-<meta property="og:url" content="http://yoursite.com/2016/03/05/Hexo-ThemeAndSettings/index.html">
+<meta property="og:title" content="Web Form 中顯示清單控制項(ListContorl)選單中任一數值">
+<meta property="og:url" content="http://yoursite.com/2016/03/18/SetListContorlValue/index.html">
 <meta property="og:site_name" content="我的技術隨筆">
-<meta property="og:description" content="更換主題下載主題到官方網站中，選擇主題，底下就會有很多主題供你挑選。點擊喜歡的主題，進去後會教導如何用指令下載主題。
-更新主題如果發現主題有改版，執行以下指令進行更新主題：12cd themes/[主題資料夾名稱]git pull
-抽換Blog主題下載後，至根目錄下的_config.yml中，找到theme:部分，於分號後空一格放上~\themes\下的資料夾名稱，範例如下：1theme: [主題">
-<meta property="og:updated_time" content="2016-03-05T06:22:32.842Z">
+<meta property="og:description" content="清單控制項常見的問題
+『xx擁有的SelectedValue無效，因為它不在項目清單中。』
+
+這個錯誤訊息很常見，可能原因有：
+
+看起來一樣，但「清單控制項」或「DB」的值藏有空白字元。
+「清單控制項」與「DB」的值對不起來，譬如「DB」有xxx資料但是「清單控制項」沒有xxx資料。
+
+此外，還有DataBind前就去SelectedValue數值…等原因。會寫這篇文章，主要是剛好看到公司內部系統">
+<meta property="og:updated_time" content="2016-03-18T15:01:41.955Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo-更換主題與基本設定">
-<meta name="twitter:description" content="更換主題下載主題到官方網站中，選擇主題，底下就會有很多主題供你挑選。點擊喜歡的主題，進去後會教導如何用指令下載主題。
-更新主題如果發現主題有改版，執行以下指令進行更新主題：12cd themes/[主題資料夾名稱]git pull
-抽換Blog主題下載後，至根目錄下的_config.yml中，找到theme:部分，於分號後空一格放上~\themes\下的資料夾名稱，範例如下：1theme: [主題">
+<meta name="twitter:title" content="Web Form 中顯示清單控制項(ListContorl)選單中任一數值">
+<meta name="twitter:description" content="清單控制項常見的問題
+『xx擁有的SelectedValue無效，因為它不在項目清單中。』
+
+這個錯誤訊息很常見，可能原因有：
+
+看起來一樣，但「清單控制項」或「DB」的值藏有空白字元。
+「清單控制項」與「DB」的值對不起來，譬如「DB」有xxx資料但是「清單控制項」沒有xxx資料。
+
+此外，還有DataBind前就去SelectedValue數值…等原因。會寫這篇文章，主要是剛好看到公司內部系統">
 
 
 
@@ -90,7 +108,7 @@
   };
 </script>
 
-  <title> Hexo-更換主題與基本設定 | 我的技術隨筆 </title>
+  <title> Web Form 中顯示清單控制項(ListContorl)選單中任一數值 | 我的技術隨筆 </title>
   <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 </head>
 
@@ -230,7 +248,7 @@
             
             
               
-                Hexo-更換主題與基本設定
+                Web Form 中顯示清單控制項(ListContorl)選單中任一數值
               
             
           </h1>
@@ -242,8 +260,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-03-05T11:49:02+08:00" content="2016-03-05">
-              2016-03-05
+            <time itemprop="dateCreated" datetime="2016-03-18T21:59:19+08:00" content="2016-03-18">
+              2016-03-18
             </time>
           </span>
 
@@ -253,8 +271,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/05/Hexo-ThemeAndSettings/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/05/Hexo-ThemeAndSettings/" itemprop="commentsCount"></span>
+                <a href="/2016/03/18/SetListContorlValue/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/18/SetListContorlValue/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -275,32 +293,26 @@
       
 
       
-        <h1 id="更換主題"><a href="#更換主題" class="headerlink" title="更換主題"></a>更換主題</h1><h2 id="下載主題"><a href="#下載主題" class="headerlink" title="下載主題"></a>下載主題</h2><p>到官方網站中，選擇<a href="https://hexo.io/themes" target="_blank" rel="external">主題</a>，底下就會有很多主題供你挑選。點擊喜歡的主題，進去後會教導如何用指令下載主題。</p>
-<h2 id="更新主題"><a href="#更新主題" class="headerlink" title="更新主題"></a>更新主題</h2><p>如果發現主題有改版，執行以下指令進行更新主題：<br><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd themes/<span class="string">[主題資料夾名稱]</span></span><br><span class="line">git pull</span><br></pre></td></tr></table></figure></p>
-<h2 id="抽換Blog主題"><a href="#抽換Blog主題" class="headerlink" title="抽換Blog主題"></a>抽換Blog主題</h2><p>下載後，至根目錄下的<code>_config.yml</code>中，找到<code>theme:</code>部分，於分號後空一格放上<code>~\themes\</code>下的資料夾名稱，範例如下：<br><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">theme</span>: <span class="string">[主題名稱]</span></span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<h1 id="安裝Plugins"><a href="#安裝Plugins" class="headerlink" title="安裝Plugins"></a>安裝Plugins</h1><p>自行到官方網站尋找外掛<a href="https://hexo.io/plugins" target="_blank" rel="external">下載</a>使用，點擊進去後會交你如何安裝與使用。</p>
-<h1 id="常見設定"><a href="#常見設定" class="headerlink" title="常見設定"></a>常見設定</h1><h2 id="根目錄下的-config-yml"><a href="#根目錄下的-config-yml" class="headerlink" title="根目錄下的_config.yml"></a>根目錄下的<code>_config.yml</code></h2><p>此目錄重要的設定有：</p>
+        <h1 id="清單控制項常見的問題"><a href="#清單控制項常見的問題" class="headerlink" title="清單控制項常見的問題"></a>清單控制項常見的問題</h1><blockquote>
+<p>『xx擁有的SelectedValue無效，因為它不在項目清單中。』</p>
+</blockquote>
+<p>這個錯誤訊息很常見，可能原因有：</p>
 <ol>
-<li><strong><code># Site</code></strong>：Blog主標題、子標題、作者名稱…等資料更新的地方</li>
-<li><strong><code># Pagination</code></strong>：設定每頁有幾篇文章</li>
-<li><strong><code># Extensions</code></strong>：抽換主題</li>
-<li><strong><code># Deployment</code></strong>：發佈相關設定<br>其他部分可以自由修改並看呈現結果，歡迎各位分享自己的設定唷。</li>
+<li>看起來一樣，但「清單控制項」或「DB」的值藏有空白字元。</li>
+<li>「清單控制項」與「DB」的值對不起來，譬如「DB」有xxx資料但是「清單控制項」沒有xxx資料。</li>
 </ol>
-<h2 id="主題下的-config-yml"><a href="#主題下的-config-yml" class="headerlink" title="主題下的_config.yml"></a>主題下的<code>_config.yml</code></h2><p>不同的主題其<code>_config.yml</code>會有不同，基本上會有『選單(menu)』、『icon』、『程式碼區塊樣式』、與『第三方服務』等設定。以我使用的主題next為範例，簡述設定：</p>
-<ol>
-<li><p><strong>選單</strong>：我的選單有首頁、關於、歸檔、與標籤。所以這四個設定開啟，其餘的註解不使用就好。以標籤為例：</p>
+<p>此外，還有DataBind前就去SelectedValue數值…等原因。<br>會寫這篇文章，主要是剛好看到公司內部系統，其程式有下面這段寫法：<br><figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//預設姓名選單的值為資料建檔人員</span></span><br><span class="line">ddlName.SelectedValue = <span class="keyword">value</span>.CrtateUserID;</span><br></pre></td></tr></table></figure></p>
+<p>看起來很正確，程式上線7年多也沒聽到使用者說有問題。</p>
+<p>正常這樣使用是沒問題，</p>
 <ul>
-<li>step1. 先於設定檔中開啟標籤（<code>tags: /tags</code>）。</li>
-<li>step2. 利用語法，新增標籤的頁面  <pre><code>hexo new page &apos;tags&apos;
-</code></pre></li>
-<li>step3. 於<code>~\source\about</code>底下，找到index.md，除了可以自己修改title外，如果你有使用評論，於index.md中增加<code>comments: false</code>即可關閉評論。</li>
-<li>step4. 只要每篇新增的文章，增加tags，系統就會自動抓取目前文章的tags並顯示在標籤頁中。</li>
+<li><code>ddlName</code>下拉式選單：動態產生公司內有權限使用系統的人員名字</li>
+<li><code>value.CrtateUserID</code>：資料建檔人員</li>
 </ul>
-</li>
-<li><strong>程式碼區塊樣式</strong>：找到<code># Code Highlight theme</code>，我個人設定為黑色背景。</li>
-<li><strong>第三方服務</strong>：常用的第三方服務有『評論(Disqus)』、『google analytics』、『站內文章搜尋(swiftype)』、『facebook SDK』…等功能設定。可以依自己的喜好幫部落格加上特別的服務。只要有第三方服務的帳號，將帳號或Key複製到對應位置貼上即可。</li>
-</ol>
+<p>但可能遇到建檔人員離職或換部門，權限異動後導致下拉式選單沒有該建檔人員姓名。</p>
+<a id="more"></a>
+<h1 id="解決方法"><a href="#解決方法" class="headerlink" title="解決方法"></a>解決方法</h1><p>解決方法很多，因為我發現程式中多處有此問題，<br>所以寫一個共用元件：<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="xmlDocTag">///</span> <span class="xmlDocTag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="xmlDocTag">///</span> 設定ListConrtol數值</span></span><br><span class="line"><span class="comment"><span class="xmlDocTag">///</span> <span class="xmlDocTag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="xmlDocTag">///</span> <span class="xmlDocTag">&lt;param name="parControl"&gt;</span>ListConrol物件<span class="xmlDocTag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="xmlDocTag">///</span> <span class="xmlDocTag">&lt;param name="parValue"&gt;</span>數值<span class="xmlDocTag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">SetListContorlValue</span>(<span class="params">ListControl parControl, <span class="keyword">string</span> parValue</span>)</span><br><span class="line"></span>&#123;</span><br><span class="line">    parControl.SelectedIndex = -<span class="number">1</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; parControl.Items.Count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (parControl.Items[i].Value.ToUpper().Trim() == parValue.ToUpper().Trim())</span><br><span class="line">        &#123;</span><br><span class="line">            parControl.Items[i].Selected = <span class="keyword">true</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>以上適用所有的清單控制項，有哪些控制項適用，就請參考MSDN(<a href="https://msdn.microsoft.com/zh-tw/library/system.web.ui.webcontrols.listcontrol.aspx" title="清單控制項" target="_blank" rel="external">ListControl類別</a>)了。</p>
+<p>這可能不是最好的寫法或解決方法，但是是簡單的解決方法。</p>
 
       
     </div>
@@ -309,7 +321,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo/" rel="tag">#Hexo</a>
+            <a href="/tags/Web-Form/" rel="tag">#Web Form</a>
           
         </div>
       
@@ -318,17 +330,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/02/28/Hexo-WriteABlog/" rel="next" title="Hexo-開始撰寫文章">
-                <i class="fa fa-chevron-left"></i> Hexo-開始撰寫文章
+              <a href="/2016/03/05/Hexo-ThemeAndSettings/" rel="next" title="Hexo-更換主題與基本設定">
+                <i class="fa fa-chevron-left"></i> Hexo-更換主題與基本設定
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/18/SetListContorlValue/" rel="prev" title="Web Form 中顯示清單控制項(ListContorl)選單中任一數值">
-                Web Form 中顯示清單控制項(ListContorl)選單中任一數值 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -446,7 +454,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#更換主題"><span class="nav-number">1.</span> <span class="nav-text">更換主題</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下載主題"><span class="nav-number">1.1.</span> <span class="nav-text">下載主題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新主題"><span class="nav-number">1.2.</span> <span class="nav-text">更新主題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽換Blog主題"><span class="nav-number">1.3.</span> <span class="nav-text">抽換Blog主題</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安裝Plugins"><span class="nav-number">2.</span> <span class="nav-text">安裝Plugins</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常見設定"><span class="nav-number">3.</span> <span class="nav-text">常見設定</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#根目錄下的-config-yml"><span class="nav-number">3.1.</span> <span class="nav-text">根目錄下的_config.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主題下的-config-yml"><span class="nav-number">3.2.</span> <span class="nav-text">主題下的_config.yml</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#清單控制項常見的問題"><span class="nav-number">1.</span> <span class="nav-text">清單控制項常見的問題</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解決方法"><span class="nav-number">2.</span> <span class="nav-text">解決方法</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -711,9 +719,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'jame2408';
-      var disqus_identifier = '2016/03/05/Hexo-ThemeAndSettings/';
-      var disqus_title = 'Hexo-更換主題與基本設定';
-      var disqus_url = 'http://yoursite.com/2016/03/05/Hexo-ThemeAndSettings/';
+      var disqus_identifier = '2016/03/18/SetListContorlValue/';
+      var disqus_title = 'Web Form 中顯示清單控制項(ListContorl)選單中任一數值';
+      var disqus_url = 'http://yoursite.com/2016/03/18/SetListContorlValue/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
