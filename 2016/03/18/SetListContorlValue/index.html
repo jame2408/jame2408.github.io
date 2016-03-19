@@ -58,6 +58,7 @@
 
 
 <meta name="description" content="清單控制項常見的問題
+
 『xx擁有的SelectedValue無效，因為它不在項目清單中。』
 
 這個錯誤訊息很常見，可能原因有：
@@ -65,12 +66,13 @@
 看起來一樣，但「清單控制項」或「DB」的值藏有空白字元。
 「清單控制項」與「DB」的值對不起來，譬如「DB」有xxx資料但是「清單控制項」沒有xxx資料。
 
-此外，還有DataBind前就去SelectedValue數值…等原因。會寫這篇文章，主要是剛好看到公司內部系統">
+此外，還有DataBind前就去SelectedValue數值…等原因。會寫這篇文章，主要是剛好看到公司內部系">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Web Form 中顯示清單控制項(ListContorl)選單中任一數值">
 <meta property="og:url" content="http://yoursite.com/2016/03/18/SetListContorlValue/index.html">
 <meta property="og:site_name" content="我的技術隨筆">
 <meta property="og:description" content="清單控制項常見的問題
+
 『xx擁有的SelectedValue無效，因為它不在項目清單中。』
 
 這個錯誤訊息很常見，可能原因有：
@@ -78,11 +80,12 @@
 看起來一樣，但「清單控制項」或「DB」的值藏有空白字元。
 「清單控制項」與「DB」的值對不起來，譬如「DB」有xxx資料但是「清單控制項」沒有xxx資料。
 
-此外，還有DataBind前就去SelectedValue數值…等原因。會寫這篇文章，主要是剛好看到公司內部系統">
-<meta property="og:updated_time" content="2016-03-18T15:01:41.955Z">
+此外，還有DataBind前就去SelectedValue數值…等原因。會寫這篇文章，主要是剛好看到公司內部系">
+<meta property="og:updated_time" content="2016-03-19T02:52:51.029Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web Form 中顯示清單控制項(ListContorl)選單中任一數值">
 <meta name="twitter:description" content="清單控制項常見的問題
+
 『xx擁有的SelectedValue無效，因為它不在項目清單中。』
 
 這個錯誤訊息很常見，可能原因有：
@@ -90,7 +93,7 @@
 看起來一樣，但「清單控制項」或「DB」的值藏有空白字元。
 「清單控制項」與「DB」的值對不起來，譬如「DB」有xxx資料但是「清單控制項」沒有xxx資料。
 
-此外，還有DataBind前就去SelectedValue數值…等原因。會寫這篇文章，主要是剛好看到公司內部系統">
+此外，還有DataBind前就去SelectedValue數值…等原因。會寫這篇文章，主要是剛好看到公司內部系">
 
 
 
@@ -293,7 +296,8 @@
       
 
       
-        <h1 id="清單控制項常見的問題"><a href="#清單控制項常見的問題" class="headerlink" title="清單控制項常見的問題"></a>清單控制項常見的問題</h1><blockquote>
+        <h1 id="清單控制項常見的問題"><a href="#清單控制項常見的問題" class="headerlink" title="清單控制項常見的問題"></a>清單控制項常見的問題</h1><p></p><p></p>
+<blockquote>
 <p>『xx擁有的SelectedValue無效，因為它不在項目清單中。』</p>
 </blockquote>
 <p>這個錯誤訊息很常見，可能原因有：</p>
@@ -303,13 +307,14 @@
 </ol>
 <p>此外，還有DataBind前就去SelectedValue數值…等原因。<br>會寫這篇文章，主要是剛好看到公司內部系統，其程式有下面這段寫法：<br><figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//預設姓名選單的值為資料建檔人員</span></span><br><span class="line">ddlName.SelectedValue = <span class="keyword">value</span>.CrtateUserID;</span><br></pre></td></tr></table></figure></p>
 <p>看起來很正確，程式上線7年多也沒聽到使用者說有問題。</p>
+<a id="more"></a>
 <p>正常這樣使用是沒問題，</p>
 <ul>
 <li><code>ddlName</code>下拉式選單：動態產生公司內有權限使用系統的人員名字</li>
 <li><code>value.CrtateUserID</code>：資料建檔人員</li>
 </ul>
-<p>但可能遇到建檔人員離職或換部門，權限異動後導致下拉式選單沒有該建檔人員姓名。</p>
-<a id="more"></a>
+<p>但可能遇到建檔人員離職，權限異動後導致下拉式選單沒有該建檔人員姓名，然而DB中舊資料還保留該離職人員當初所建立之資料，導致選單與DB資料不合。</p>
+<hr>
 <h1 id="解決方法"><a href="#解決方法" class="headerlink" title="解決方法"></a>解決方法</h1><p>解決方法很多，因為我發現程式中多處有此問題，<br>所以寫一個共用元件：<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="xmlDocTag">///</span> <span class="xmlDocTag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="xmlDocTag">///</span> 設定ListConrtol數值</span></span><br><span class="line"><span class="comment"><span class="xmlDocTag">///</span> <span class="xmlDocTag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="xmlDocTag">///</span> <span class="xmlDocTag">&lt;param name="parControl"&gt;</span>ListConrol物件<span class="xmlDocTag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="xmlDocTag">///</span> <span class="xmlDocTag">&lt;param name="parValue"&gt;</span>數值<span class="xmlDocTag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">SetListContorlValue</span>(<span class="params">ListControl parControl, <span class="keyword">string</span> parValue</span>)</span><br><span class="line"></span>&#123;</span><br><span class="line">    parControl.SelectedIndex = -<span class="number">1</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; parControl.Items.Count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (parControl.Items[i].Value.ToUpper().Trim() == parValue.ToUpper().Trim())</span><br><span class="line">        &#123;</span><br><span class="line">            parControl.Items[i].Selected = <span class="keyword">true</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>以上適用所有的清單控制項，有哪些控制項適用，就請參考MSDN(<a href="https://msdn.microsoft.com/zh-tw/library/system.web.ui.webcontrols.listcontrol.aspx" title="清單控制項" target="_blank" rel="external">ListControl類別</a>)了。</p>
 <p>這可能不是最好的寫法或解決方法，但是是簡單的解決方法。</p>

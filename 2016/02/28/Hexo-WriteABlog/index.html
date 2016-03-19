@@ -76,7 +76,7 @@ draft：草稿，如果文">
 <meta property="og:image" content="http://i.imgur.com/Bt03fuv.png">
 <meta property="og:image" content="http://i.imgur.com/Bt03fuv.png">
 <meta property="og:image" content="http://i.imgur.com/Bt03fuv.png">
-<meta property="og:updated_time" content="2016-03-02T13:31:00.296Z">
+<meta property="og:updated_time" content="2016-03-19T03:10:19.079Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo-開始撰寫文章">
 <meta name="twitter:description" content="建立文章可以利用以下語法，新增MD檔：1Hexo new [文章類型] [檔名]
@@ -340,7 +340,7 @@ draft：草稿，如果文">
 <li>半形空白：<code>&amp;ensp;</code></li>
 <li>全形空白：<code>&amp;emsp;</code></li>
 </ul>
-<h2 id="添加空白行"><a href="#添加空白行" class="headerlink" title="添加空白行"></a>添加空白行</h2><p>相信很多人按很多空白鍵或Enter鍵，發現只能空一行(甚至無法加入空白行)。我個人在編輯上會使用<code>&amp;ensp;</code>，利用空白符號進行『添加空白行』的動作唷。</p>
+<h2 id="添加空白行"><a href="#添加空白行" class="headerlink" title="添加空白行"></a>添加空白行</h2><p>相信很多人按很多空白鍵或Enter鍵，發現只能空一行(甚至無法加入空白行)，去除多餘的空白行是Markdown特色之一。如果編排文章格式時，真的要有空白行，編輯上可以使用<code>&amp;ensp;</code>，利用空白符號進行『添加空白行』的動作。另外，也可以使用<code>&lt;br /&gt;</code>或<code>&lt;p /&gt;</code>添加空白行。</p>
 <h2 id="圖片樣式設定"><a href="#圖片樣式設定" class="headerlink" title="圖片樣式設定"></a>圖片樣式設定</h2><p>MD檔放入圖片語法<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="link_label">圖案文字說明</span>](<span class="link_url">URL</span>)</span><br></pre></td></tr></table></figure></p>
 <p>範例：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="link_label">hexo x github</span>](<span class="link_url">http://i.imgur.com/Bt03fuv.png</span>)</span><br></pre></td></tr></table></figure></p>
 <p><img src="http://i.imgur.com/Bt03fuv.png" alt="hexo x github"><br>p.s. 我的主題預設圖片就是置中，所以現在看到的圖案應該在中間。如果你的主題圖片預設不是置中，請自行修改設定或使用下一步驟的語法。</p>
@@ -351,6 +351,26 @@ draft：草稿，如果文">
 <center><img src="http://i.imgur.com/Bt03fuv.png" width="150" height="100" alt="hexo x github"></center>
 
 <h2 id="設定首頁文章有『繼續閱讀』功能"><a href="#設定首頁文章有『繼續閱讀』功能" class="headerlink" title="設定首頁文章有『繼續閱讀』功能"></a>設定首頁文章有『繼續閱讀』功能</h2><p>繼續閱讀：在部落格首頁時，會將每篇文章以全文方式顯示，但有些文章太長了，導致要拖拉很久才能找到下一篇。只要在內文中，使用<code>&lt;!-- more --&gt;</code>（記得more前後都要空一格），首頁文章就會只顯示到此行，訪客要自行點選more才能觀看全文。</p>
+<h2 id="使用表格："><a href="#使用表格：" class="headerlink" title="使用表格："></a>使用表格：</h2><p>hexo支援表格的，表格寫法如下：<br><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">First</span> Header  | Second Header</span><br><span class="line">------------- | -------------</span><br><span class="line">Content <span class="keyword">Cell</span>  | Content <span class="keyword">Cell</span></span><br><span class="line">Content <span class="keyword">Cell</span>  | Content <span class="keyword">Cell</span></span><br></pre></td></tr></table></figure></p>
+<p>有些MarkDown編輯器不支援<code>github favorite markdown</code>，這樣即時預覽時會看不到表格，但把文章發佈到網站後，還是可以看到表格的。或者可以使用<code>hexo s</code>先行看看結果。<br>呈現結果：</p>
+<table>
+<thead>
+<tr>
+<th>First Header</th>
+<th>Second Header</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Content Cell</td>
+<td>Content Cell</td>
+</tr>
+<tr>
+<td>Content Cell</td>
+<td>Content Cell</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -496,7 +516,7 @@ draft：草稿，如果文">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#建立文章"><span class="nav-number">1.</span> <span class="nav-text">建立文章</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文章格式"><span class="nav-number">2.</span> <span class="nav-text">文章格式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MD語法"><span class="nav-number">3.</span> <span class="nav-text">MD語法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MD編輯小技巧"><span class="nav-number">4.</span> <span class="nav-text">MD編輯小技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#字型樣式"><span class="nav-number">4.1.</span> <span class="nav-text">字型樣式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#縮排"><span class="nav-number">4.2.</span> <span class="nav-text">縮排</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加空白行"><span class="nav-number">4.3.</span> <span class="nav-text">添加空白行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#圖片樣式設定"><span class="nav-number">4.4.</span> <span class="nav-text">圖片樣式設定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#設定首頁文章有『繼續閱讀』功能"><span class="nav-number">4.5.</span> <span class="nav-text">設定首頁文章有『繼續閱讀』功能</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#建立文章"><span class="nav-number">1.</span> <span class="nav-text">建立文章</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文章格式"><span class="nav-number">2.</span> <span class="nav-text">文章格式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MD語法"><span class="nav-number">3.</span> <span class="nav-text">MD語法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MD編輯小技巧"><span class="nav-number">4.</span> <span class="nav-text">MD編輯小技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#字型樣式"><span class="nav-number">4.1.</span> <span class="nav-text">字型樣式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#縮排"><span class="nav-number">4.2.</span> <span class="nav-text">縮排</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加空白行"><span class="nav-number">4.3.</span> <span class="nav-text">添加空白行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#圖片樣式設定"><span class="nav-number">4.4.</span> <span class="nav-text">圖片樣式設定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#設定首頁文章有『繼續閱讀』功能"><span class="nav-number">4.5.</span> <span class="nav-text">設定首頁文章有『繼續閱讀』功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用表格："><span class="nav-number">4.6.</span> <span class="nav-text">使用表格：</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

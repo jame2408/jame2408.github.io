@@ -289,7 +289,8 @@
 
       
         
-          <h1 id="清單控制項常見的問題"><a href="#清單控制項常見的問題" class="headerlink" title="清單控制項常見的問題"></a>清單控制項常見的問題</h1><blockquote>
+          <h1 id="清單控制項常見的問題"><a href="#清單控制項常見的問題" class="headerlink" title="清單控制項常見的問題"></a>清單控制項常見的問題</h1><p><p /></p>
+<blockquote>
 <p>『xx擁有的SelectedValue無效，因為它不在項目清單中。』</p>
 </blockquote>
 <p>這個錯誤訊息很常見，可能原因有：</p>
@@ -299,12 +300,6 @@
 </ol>
 <p>此外，還有DataBind前就去SelectedValue數值…等原因。<br>會寫這篇文章，主要是剛好看到公司內部系統，其程式有下面這段寫法：<br><figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//預設姓名選單的值為資料建檔人員</span></span><br><span class="line">ddlName.SelectedValue = <span class="keyword">value</span>.CrtateUserID;</span><br></pre></td></tr></table></figure></p>
 <p>看起來很正確，程式上線7年多也沒聽到使用者說有問題。</p>
-<p>正常這樣使用是沒問題，</p>
-<ul>
-<li><code>ddlName</code>下拉式選單：動態產生公司內有權限使用系統的人員名字</li>
-<li><code>value.CrtateUserID</code>：資料建檔人員</li>
-</ul>
-<p>但可能遇到建檔人員離職或換部門，權限異動後導致下拉式選單沒有該建檔人員姓名。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/03/18/SetListContorlValue/#more" rel="contents">
               閱讀全文 &raquo;
