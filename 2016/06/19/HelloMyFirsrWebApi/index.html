@@ -77,8 +77,10 @@ ste">
 <meta property="og:image" content="http://i.imgur.com/z1ov76X.png">
 <meta property="og:image" content="http://i.imgur.com/apx6nRq.png">
 <meta property="og:image" content="http://i.imgur.com/4rebvEx.png">
+<meta property="og:image" content="http://i.imgur.com/wYM2m1h.png">
+<meta property="og:image" content="http://i.imgur.com/58DUgS8.png">
 <meta property="og:image" content="http://i.imgur.com/QSiB0OH.png">
-<meta property="og:updated_time" content="2016-06-23T08:14:00.709Z">
+<meta property="og:updated_time" content="2016-06-23T08:23:47.064Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web API初體驗 - 嘗試建立WebApi">
 <meta name="twitter:description" content="實作Web API 2步驟Web API推出已經很長一段時間了，目前是第二代，因為工作上沒有用到，所以也沒花時間去學習。今天花了一些時間學習，所以就稍微紀錄一下。
@@ -298,29 +300,51 @@ ste">
 </ul>
 <a id="more"></a>
 <h2 id="一、建立Web-API專案："><a href="#一、建立Web-API專案：" class="headerlink" title="一、建立Web API專案："></a>一、建立Web API專案：</h2><p><img src="http://i.imgur.com/5lvtz79.png" alt="Imgur"><br><img src="http://i.imgur.com/9e3NiyS.png" alt="Imgur">  </p>
-<p>稍微看了一下，兩個心得：</p>
-<ul>
+<p>稍微看了一下，兩個心得：  </p>
+<ol>
 <li>Web API和MVC架構幾乎一樣，差別在於Web API的控制器繼承ApiController，MVC的控制器繼承Controller。  </li>
-<li>Web API沒有View。（註：圖中看不出來）</li>
-<li>Areas中<del>很貼心的</del>自動建立Help頁面（註：說穿了就是要自己解註解啦！）  </li>
-</ul>
+<li>Web API沒有View。（註：圖中看不出來）  </li>
+<li>Areas中<del>很貼心的</del>自動建立Help頁面（註：說穿了就是要自己寫註解啦！）  </li>
+</ol>
 <p>建立好專案後，就進行下一步吧。</p>
-<h2 id="二、建立Model："><a href="#二、建立Model：" class="headerlink" title="二、建立Model："></a>二、建立Model：</h2><p>既然是Web API，那就實際連線DB撈取資料並回傳給client吧。本次範例為LocalDB，使用Entity Framework的DataBase First建立資料模型。  </p>
+<h2 id="二、建立Model："><a href="#二、建立Model：" class="headerlink" title="二、建立Model："></a>二、建立Model：</h2><p>既然是 Web API ，那就實際連線DB撈取資料並回傳給client吧。本次範例為LocalDB，使用Entity Framework的DataBase First建立資料模型。  </p>
 <p>記得建好Model後要建置（F6）唷</p>
 <h2 id="三、加入『Web-API-2控制器-空白』："><a href="#三、加入『Web-API-2控制器-空白』：" class="headerlink" title="三、加入『Web API 2控制器 - 空白』："></a>三、加入『Web API 2控制器 - 空白』：</h2><p><img src="http://i.imgur.com/Psop4j3.png" alt="Imgur"><br><img src="http://i.imgur.com/z1ov76X.png" alt="Imgur"><br><img src="http://i.imgur.com/apx6nRq.png" alt="Imgur"><br><img src="http://i.imgur.com/4rebvEx.png" alt="Imgur">  </p>
 <p>自動產生Web API Controller架構，連程式碼都幫你寫好了。<br>稍微說明一下，Controller會回傳型別分別為：  </p>
+<ul>
+<li><strong>模型類別</strong>：可回傳<strong>集合（IEnumerable<t>）</t></strong>或回傳<strong>單筆（T）</strong>，以下程式碼為回傳集合資料。  </li>
+</ul>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> IQueryable&lt;Client&gt; <span class="title">GetClient</span>(<span class="params"></span>)</span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> db.Client;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>IHttpActionResult</strong>：ApiController的動作結果  </li>
+</ul>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function">IHttpActionResult <span class="title">GetClient</span><span class="params">(<span class="keyword">int</span> id)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    Client client = db.Client.Find(id);</span><br><span class="line">    <span class="keyword">if</span> (client == <span class="keyword">null</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">return</span> <span class="title">NotFound</span><span class="params">()</span></span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">return</span> <span class="title">Ok</span><span class="params">(client)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>HttpResponseMessage</strong>：HTTP回應訊息物件（較為低階）  </li>
+</ul>
+<p>以上只是簡單說明有這幾種回傳型別，未來有空在慢慢補齊內容吧。</p>
+<h2 id="四、呼叫Web-API："><a href="#四、呼叫Web-API：" class="headerlink" title="四、呼叫Web API："></a>四、呼叫Web API：</h2><p>Ctrl+F5 執行，然後網址列後面加上<code>/api/Clients/1</code>，<br>結果馬上跑出錯誤訊息……。<br><img src="http://i.imgur.com/wYM2m1h.png" alt="Imgur"></p>
+<p>主要訊息為：《This XML file does not appear to have any style information associated with it. The document tree is shown below.》<br>意思是你Web API回傳XML格式資訊，瀏覽器無法解析資訊，所以才出現這錯誤訊息。  </p>
+<p>前端呼叫 Web API 時，基本上會做序列化然後顯示資料。可是開發 Web API 時，每次都要去做一個前端畫面顯示資料，有點不切實際。所以在做測試時，會使用Chrome套件<a href="https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop/related?utm_source=chrome-app-launcher-info-dialog" target="_blank" rel="external">Postman</a>進行測試。  </p>
+<p>下圖所示，主要有三個步驟：  </p>
 <ol>
-<li><p><strong>模型類別</strong>：可回傳<strong>集合（IEnumerable<t>）</t></strong>或回傳<strong>單筆（T）</strong>，以下程式碼為回傳集合資料。  </p>
-<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  public IQueryable<span class="variable">&lt;Client&gt;</span> GetClient()</span><br><span class="line">  &#123;</span><br><span class="line">      return db.Client;</span><br><span class="line">  &#125;</span><br><span class="line">```  </span><br><span class="line">  </span><br><span class="line">2. <span class="keyword">*</span><span class="keyword">*</span>IHttpActionResult<span class="keyword">*</span><span class="keyword">*</span>：ApiController的動作結果</span><br></pre></td></tr></table></figure>
-<p>public IHttpActionResult GetClient(int id)<br>{<br>   Client client = db.Client.Find(id);<br>   if (client == null)<br>   {</p>
-<pre><code>return NotFound();
-</code></pre><p>   }</p>
-<p>   return Ok(client);<br>}</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line"><span class="bullet">3. </span><span class="strong">**HttpResponseMessage**</span>：HTTP回應訊息物件（較為低階）  </span><br><span class="line"></span><br><span class="line">以上只是簡單說明有這幾種回傳型別，未來有空在慢慢補齊內容吧。</span><br><span class="line"></span><br><span class="line"><span class="header">## 四、呼叫Web API：</span></span><br><span class="line">Ctrl+F5 執行，然後網址列後面加上<span class="code">`/api/Clients/1`</span>，  </span><br><span class="line">結果馬上跑出錯誤訊息......。</span><br><span class="line">![<span class="link_label">Imgur</span>](<span class="link_url">http://i.imgur.com/wYM2m1h.png</span>)</span><br><span class="line"></span><br><span class="line">主要訊息為：《This XML file does not appear to have any style information associated with it. The document tree is shown below.》  </span><br><span class="line">意思是你Web API回傳XML格式資訊，瀏覽器無法解析資訊，所以才出現這錯誤訊息。  </span><br><span class="line"></span><br><span class="line">前端呼叫 Web API 時，基本上會做序列化然後顯示資料。可是開發 Web API 時，每次都要去做一個前端畫面顯示資料，有點不切實際。所以在做測試時，會使用Chrome套件[<span class="link_label">Postman</span>](<span class="link_url">https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop/related?utm_source=chrome-app-launcher-info-dialog</span>)進行測試。  </span><br><span class="line"></span><br><span class="line">下圖所示，主要有三個步驟：  </span><br><span class="line"><span class="bullet">1. </span>選擇動作：本次範例為查詢資料，選擇GET。  </span><br><span class="line"><span class="bullet">2. </span>貼上 Web API 的 URI  </span><br><span class="line"><span class="bullet">3. </span>點擊Send</span><br><span class="line">![<span class="link_label">Imgur</span>](<span class="link_url">http://i.imgur.com/58DUgS8.png</span>)</span><br><span class="line"></span><br><span class="line">結果又出現錯誤訊息，錯誤訊息大概的意思是《Self referencing loop》。  </span><br><span class="line">循環參考是EF上常見的錯誤訊息，網路上解法一堆，貼上幾篇參考。  </span><br><span class="line"><span class="blockquote">&gt; 1. [EDMX Navigation Property 屬性引發 JSON 物件循環參考錯誤與解決辦法](https://msdn.microsoft.com/zh-tw/library/dn260087.aspx), By Bruce  </span></span><br><span class="line"><span class="blockquote">&gt; 2. [ASP.NET Web API 無法輸出 Entity Framework 物件的解法](http://blog.miniasp.com/post/2012/12/24/ASPNET-Web-API-Self-referencing-loop-detected-for-property-solutions.aspx), By Will 保哥  </span></span><br><span class="line"></span><br><span class="line">以上兩篇說明都淺顯易懂，因為這只是小小範例，所以使用簡單的作法，關掉延遲載入。</span><br></pre></td></tr></table></figure>
-<p>public ClientsController()<br>{<br>   db.Configuration.LazyLoadingEnabled = false;<br>}<br>```  </p>
-</li>
+<li>選擇動作：本次範例為查詢資料，選擇GET。  </li>
+<li>貼上 Web API 的 URI  </li>
+<li>點擊Send<br><img src="http://i.imgur.com/58DUgS8.png" alt="Imgur"></li>
 </ol>
-<p>最後結果：<br><img src="http://i.imgur.com/QSiB0OH.png" alt="Imgur"></p>
+<p>結果又出現錯誤訊息，錯誤訊息大概的意思是《Self referencing loop》。<br>循環參考是EF上常見的錯誤訊息，網路上解法一堆，貼上幾篇參考。  </p>
+<blockquote>
+<ol>
+<li><a href="https://msdn.microsoft.com/zh-tw/library/dn260087.aspx" target="_blank" rel="external">EDMX Navigation Property 屬性引發 JSON 物件循環參考錯誤與解決辦法</a>, By Bruce  </li>
+<li><a href="http://blog.miniasp.com/post/2012/12/24/ASPNET-Web-API-Self-referencing-loop-detected-for-property-solutions.aspx" target="_blank" rel="external">ASP.NET Web API 無法輸出 Entity Framework 物件的解法</a>, By Will 保哥  </li>
+</ol>
+</blockquote>
+<p>以上兩篇說明都淺顯易懂，因為這只是小小範例，所以使用簡單的作法，關掉延遲載入。  </p>
+<pre><code>public ClientsController()
+{
+    db.Configuration.LazyLoadingEnabled = false;
+}
+</code></pre><p>最後結果：<br><img src="http://i.imgur.com/QSiB0OH.png" alt="Imgur"></p>
 
       
     </div>
@@ -462,7 +486,7 @@ ste">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#實作Web-API-2步驟"><span class="nav-number">1.</span> <span class="nav-text">實作Web API 2步驟</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、建立Web-API專案："><span class="nav-number">1.1.</span> <span class="nav-text">一、建立Web API專案：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、建立Model："><span class="nav-number">1.2.</span> <span class="nav-text">二、建立Model：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、加入『Web-API-2控制器-空白』："><span class="nav-number">1.3.</span> <span class="nav-text">三、加入『Web API 2控制器 - 空白』：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#實作Web-API-2步驟"><span class="nav-number">1.</span> <span class="nav-text">實作Web API 2步驟</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、建立Web-API專案："><span class="nav-number">1.1.</span> <span class="nav-text">一、建立Web API專案：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、建立Model："><span class="nav-number">1.2.</span> <span class="nav-text">二、建立Model：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、加入『Web-API-2控制器-空白』："><span class="nav-number">1.3.</span> <span class="nav-text">三、加入『Web API 2控制器 - 空白』：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、呼叫Web-API："><span class="nav-number">1.4.</span> <span class="nav-text">四、呼叫Web API：</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
