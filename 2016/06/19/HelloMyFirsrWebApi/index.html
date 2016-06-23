@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo," />
+  <meta name="keywords" content="WebApi," />
 
 
 
@@ -57,22 +57,35 @@
 
 
 
-<meta name="description" content="更換主題下載主題到官方網站中，選擇主題，底下就會有很多主題供你挑選。點擊喜歡的主題，進去後會教導如何用指令下載主題。
-更新主題如果發現主題有改版，執行以下指令進行更新主題：12cd themes/[主題資料夾名稱]git pull
-抽換Blog主題下載後，至根目錄下的_config.yml中，找到theme:部分，於分號後空一格放上~\themes\下的資料夾名稱，範例如下：1theme: [主題">
+<meta name="description" content="實作Web API 2步驟Web API推出已經很長一段時間了，目前是第二代，因為工作上沒有用到，所以也沒花時間去學習。今天花了一些時間學習，所以就稍微紀錄一下。
+網路上很多Web API教學，不管是理論或實作，資訊相當多。以下只是記錄我的實作方法與步驟。並不會去講太多理論，只是紀錄我的實作而已。因為是初體驗，所以就從建專案開始吧。步驟大綱如下：  
+
+step 1：建立Web API專案
+ste">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo-更換主題與基本設定">
-<meta property="og:url" content="http://yoursite.com/2016/03/05/Hexo-ThemeAndSettings/index.html">
+<meta property="og:title" content="Web API初體驗 - 嘗試建立WebApi">
+<meta property="og:url" content="http://yoursite.com/2016/06/19/HelloMyFirsrWebApi/index.html">
 <meta property="og:site_name" content="我的技術隨筆">
-<meta property="og:description" content="更換主題下載主題到官方網站中，選擇主題，底下就會有很多主題供你挑選。點擊喜歡的主題，進去後會教導如何用指令下載主題。
-更新主題如果發現主題有改版，執行以下指令進行更新主題：12cd themes/[主題資料夾名稱]git pull
-抽換Blog主題下載後，至根目錄下的_config.yml中，找到theme:部分，於分號後空一格放上~\themes\下的資料夾名稱，範例如下：1theme: [主題">
-<meta property="og:updated_time" content="2016-03-05T06:22:32.842Z">
+<meta property="og:description" content="實作Web API 2步驟Web API推出已經很長一段時間了，目前是第二代，因為工作上沒有用到，所以也沒花時間去學習。今天花了一些時間學習，所以就稍微紀錄一下。
+網路上很多Web API教學，不管是理論或實作，資訊相當多。以下只是記錄我的實作方法與步驟。並不會去講太多理論，只是紀錄我的實作而已。因為是初體驗，所以就從建專案開始吧。步驟大綱如下：  
+
+step 1：建立Web API專案
+ste">
+<meta property="og:image" content="http://i.imgur.com/5lvtz79.png">
+<meta property="og:image" content="http://i.imgur.com/9e3NiyS.png">
+<meta property="og:image" content="http://i.imgur.com/Psop4j3.png">
+<meta property="og:image" content="http://i.imgur.com/z1ov76X.png">
+<meta property="og:image" content="http://i.imgur.com/apx6nRq.png">
+<meta property="og:image" content="http://i.imgur.com/4rebvEx.png">
+<meta property="og:image" content="http://i.imgur.com/QSiB0OH.png">
+<meta property="og:updated_time" content="2016-06-23T08:14:00.709Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo-更換主題與基本設定">
-<meta name="twitter:description" content="更換主題下載主題到官方網站中，選擇主題，底下就會有很多主題供你挑選。點擊喜歡的主題，進去後會教導如何用指令下載主題。
-更新主題如果發現主題有改版，執行以下指令進行更新主題：12cd themes/[主題資料夾名稱]git pull
-抽換Blog主題下載後，至根目錄下的_config.yml中，找到theme:部分，於分號後空一格放上~\themes\下的資料夾名稱，範例如下：1theme: [主題">
+<meta name="twitter:title" content="Web API初體驗 - 嘗試建立WebApi">
+<meta name="twitter:description" content="實作Web API 2步驟Web API推出已經很長一段時間了，目前是第二代，因為工作上沒有用到，所以也沒花時間去學習。今天花了一些時間學習，所以就稍微紀錄一下。
+網路上很多Web API教學，不管是理論或實作，資訊相當多。以下只是記錄我的實作方法與步驟。並不會去講太多理論，只是紀錄我的實作而已。因為是初體驗，所以就從建專案開始吧。步驟大綱如下：  
+
+step 1：建立Web API專案
+ste">
 
 
 
@@ -90,7 +103,7 @@
   };
 </script>
 
-  <title> Hexo-更換主題與基本設定 | 我的技術隨筆 </title>
+  <title> Web API初體驗 - 嘗試建立WebApi | 我的技術隨筆 </title>
   <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 </head>
 
@@ -230,7 +243,7 @@
             
             
               
-                Hexo-更換主題與基本設定
+                Web API初體驗 - 嘗試建立WebApi
               
             
           </h1>
@@ -242,8 +255,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-03-05T11:49:02+08:00" content="2016-03-05">
-              2016-03-05
+            <time itemprop="dateCreated" datetime="2016-06-19T21:27:50+08:00" content="2016-06-19">
+              2016-06-19
             </time>
           </span>
 
@@ -253,8 +266,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/05/Hexo-ThemeAndSettings/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/05/Hexo-ThemeAndSettings/" itemprop="commentsCount"></span>
+                <a href="/2016/06/19/HelloMyFirsrWebApi/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/06/19/HelloMyFirsrWebApi/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -275,32 +288,39 @@
       
 
       
-        <h1 id="更換主題"><a href="#更換主題" class="headerlink" title="更換主題"></a>更換主題</h1><h2 id="下載主題"><a href="#下載主題" class="headerlink" title="下載主題"></a>下載主題</h2><p>到官方網站中，選擇<a href="https://hexo.io/themes" target="_blank" rel="external">主題</a>，底下就會有很多主題供你挑選。點擊喜歡的主題，進去後會教導如何用指令下載主題。</p>
-<h2 id="更新主題"><a href="#更新主題" class="headerlink" title="更新主題"></a>更新主題</h2><p>如果發現主題有改版，執行以下指令進行更新主題：<br><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd themes/<span class="string">[主題資料夾名稱]</span></span><br><span class="line">git pull</span><br></pre></td></tr></table></figure></p>
-<h2 id="抽換Blog主題"><a href="#抽換Blog主題" class="headerlink" title="抽換Blog主題"></a>抽換Blog主題</h2><p>下載後，至根目錄下的<code>_config.yml</code>中，找到<code>theme:</code>部分，於分號後空一格放上<code>~\themes\</code>下的資料夾名稱，範例如下：<br><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">theme</span>: <span class="string">[主題名稱]</span></span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<h1 id="安裝Plugins"><a href="#安裝Plugins" class="headerlink" title="安裝Plugins"></a>安裝Plugins</h1><p>自行到官方網站尋找外掛<a href="https://hexo.io/plugins" target="_blank" rel="external">下載</a>使用，點擊進去後會交你如何安裝與使用。</p>
-<h1 id="常見設定"><a href="#常見設定" class="headerlink" title="常見設定"></a>常見設定</h1><h2 id="根目錄下的-config-yml"><a href="#根目錄下的-config-yml" class="headerlink" title="根目錄下的_config.yml"></a>根目錄下的<code>_config.yml</code></h2><p>此目錄重要的設定有：</p>
-<ol>
-<li><strong><code># Site</code></strong>：Blog主標題、子標題、作者名稱…等資料更新的地方</li>
-<li><strong><code># Pagination</code></strong>：設定每頁有幾篇文章</li>
-<li><strong><code># Extensions</code></strong>：抽換主題</li>
-<li><strong><code># Deployment</code></strong>：發佈相關設定<br>其他部分可以自由修改並看呈現結果，歡迎各位分享自己的設定唷。</li>
-</ol>
-<h2 id="主題下的-config-yml"><a href="#主題下的-config-yml" class="headerlink" title="主題下的_config.yml"></a>主題下的<code>_config.yml</code></h2><p>不同的主題其<code>_config.yml</code>會有不同，基本上會有『選單(menu)』、『icon』、『程式碼區塊樣式』、與『第三方服務』等設定。以我使用的主題next為範例，簡述設定：</p>
-<ol>
-<li><p><strong>選單</strong>：我的選單有首頁、關於、歸檔、與標籤。所以這四個設定開啟，其餘的註解不使用就好。以標籤為例：</p>
+        <h1 id="實作Web-API-2步驟"><a href="#實作Web-API-2步驟" class="headerlink" title="實作Web API 2步驟"></a>實作Web API 2步驟</h1><p>Web API推出已經很長一段時間了，目前是第二代，因為工作上沒有用到，所以也沒花時間去學習。今天花了一些時間學習，所以就稍微紀錄一下。</p>
+<p>網路上很多Web API教學，不管是理論或實作，資訊相當多。以下只是記錄我的實作方法與步驟。並不會去講太多理論，只是紀錄我的實作而已。<br>因為是初體驗，所以就從建專案開始吧。步驟大綱如下：  </p>
 <ul>
-<li>step1. 先於設定檔中開啟標籤（<code>tags: /tags</code>）。</li>
-<li>step2. 利用語法，新增標籤的頁面  <pre><code>hexo new page &apos;tags&apos;
-</code></pre></li>
-<li>step3. 於<code>~\source\about</code>底下，找到index.md，除了可以自己修改title外，如果你有使用評論，於index.md中增加<code>comments: false</code>即可關閉評論。</li>
-<li>step4. 只要每篇新增的文章，增加tags，系統就會自動抓取目前文章的tags並顯示在標籤頁中。</li>
+<li>step 1：建立Web API專案</li>
+<li>step 2：建立Model模型類別（使用Entity Framework的DataBase first建立模型）</li>
+<li>step 3：加入『Web API 2控制器 - 空白』</li>
+<li>step 4：呼叫Web API</li>
 </ul>
+<a id="more"></a>
+<h2 id="一、建立Web-API專案："><a href="#一、建立Web-API專案：" class="headerlink" title="一、建立Web API專案："></a>一、建立Web API專案：</h2><p><img src="http://i.imgur.com/5lvtz79.png" alt="Imgur"><br><img src="http://i.imgur.com/9e3NiyS.png" alt="Imgur">  </p>
+<p>稍微看了一下，兩個心得：</p>
+<ul>
+<li>Web API和MVC架構幾乎一樣，差別在於Web API的控制器繼承ApiController，MVC的控制器繼承Controller。  </li>
+<li>Web API沒有View。（註：圖中看不出來）</li>
+<li>Areas中<del>很貼心的</del>自動建立Help頁面（註：說穿了就是要自己解註解啦！）  </li>
+</ul>
+<p>建立好專案後，就進行下一步吧。</p>
+<h2 id="二、建立Model："><a href="#二、建立Model：" class="headerlink" title="二、建立Model："></a>二、建立Model：</h2><p>既然是Web API，那就實際連線DB撈取資料並回傳給client吧。本次範例為LocalDB，使用Entity Framework的DataBase First建立資料模型。  </p>
+<p>記得建好Model後要建置（F6）唷</p>
+<h2 id="三、加入『Web-API-2控制器-空白』："><a href="#三、加入『Web-API-2控制器-空白』：" class="headerlink" title="三、加入『Web API 2控制器 - 空白』："></a>三、加入『Web API 2控制器 - 空白』：</h2><p><img src="http://i.imgur.com/Psop4j3.png" alt="Imgur"><br><img src="http://i.imgur.com/z1ov76X.png" alt="Imgur"><br><img src="http://i.imgur.com/apx6nRq.png" alt="Imgur"><br><img src="http://i.imgur.com/4rebvEx.png" alt="Imgur">  </p>
+<p>自動產生Web API Controller架構，連程式碼都幫你寫好了。<br>稍微說明一下，Controller會回傳型別分別為：  </p>
+<ol>
+<li><p><strong>模型類別</strong>：可回傳<strong>集合（IEnumerable<t>）</t></strong>或回傳<strong>單筆（T）</strong>，以下程式碼為回傳集合資料。  </p>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  public IQueryable<span class="variable">&lt;Client&gt;</span> GetClient()</span><br><span class="line">  &#123;</span><br><span class="line">      return db.Client;</span><br><span class="line">  &#125;</span><br><span class="line">```  </span><br><span class="line">  </span><br><span class="line">2. <span class="keyword">*</span><span class="keyword">*</span>IHttpActionResult<span class="keyword">*</span><span class="keyword">*</span>：ApiController的動作結果</span><br></pre></td></tr></table></figure>
+<p>public IHttpActionResult GetClient(int id)<br>{<br>   Client client = db.Client.Find(id);<br>   if (client == null)<br>   {</p>
+<pre><code>return NotFound();
+</code></pre><p>   }</p>
+<p>   return Ok(client);<br>}</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line"><span class="bullet">3. </span><span class="strong">**HttpResponseMessage**</span>：HTTP回應訊息物件（較為低階）  </span><br><span class="line"></span><br><span class="line">以上只是簡單說明有這幾種回傳型別，未來有空在慢慢補齊內容吧。</span><br><span class="line"></span><br><span class="line"><span class="header">## 四、呼叫Web API：</span></span><br><span class="line">Ctrl+F5 執行，然後網址列後面加上<span class="code">`/api/Clients/1`</span>，  </span><br><span class="line">結果馬上跑出錯誤訊息......。</span><br><span class="line">![<span class="link_label">Imgur</span>](<span class="link_url">http://i.imgur.com/wYM2m1h.png</span>)</span><br><span class="line"></span><br><span class="line">主要訊息為：《This XML file does not appear to have any style information associated with it. The document tree is shown below.》  </span><br><span class="line">意思是你Web API回傳XML格式資訊，瀏覽器無法解析資訊，所以才出現這錯誤訊息。  </span><br><span class="line"></span><br><span class="line">前端呼叫 Web API 時，基本上會做序列化然後顯示資料。可是開發 Web API 時，每次都要去做一個前端畫面顯示資料，有點不切實際。所以在做測試時，會使用Chrome套件[<span class="link_label">Postman</span>](<span class="link_url">https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop/related?utm_source=chrome-app-launcher-info-dialog</span>)進行測試。  </span><br><span class="line"></span><br><span class="line">下圖所示，主要有三個步驟：  </span><br><span class="line"><span class="bullet">1. </span>選擇動作：本次範例為查詢資料，選擇GET。  </span><br><span class="line"><span class="bullet">2. </span>貼上 Web API 的 URI  </span><br><span class="line"><span class="bullet">3. </span>點擊Send</span><br><span class="line">![<span class="link_label">Imgur</span>](<span class="link_url">http://i.imgur.com/58DUgS8.png</span>)</span><br><span class="line"></span><br><span class="line">結果又出現錯誤訊息，錯誤訊息大概的意思是《Self referencing loop》。  </span><br><span class="line">循環參考是EF上常見的錯誤訊息，網路上解法一堆，貼上幾篇參考。  </span><br><span class="line"><span class="blockquote">&gt; 1. [EDMX Navigation Property 屬性引發 JSON 物件循環參考錯誤與解決辦法](https://msdn.microsoft.com/zh-tw/library/dn260087.aspx), By Bruce  </span></span><br><span class="line"><span class="blockquote">&gt; 2. [ASP.NET Web API 無法輸出 Entity Framework 物件的解法](http://blog.miniasp.com/post/2012/12/24/ASPNET-Web-API-Self-referencing-loop-detected-for-property-solutions.aspx), By Will 保哥  </span></span><br><span class="line"></span><br><span class="line">以上兩篇說明都淺顯易懂，因為這只是小小範例，所以使用簡單的作法，關掉延遲載入。</span><br></pre></td></tr></table></figure>
+<p>public ClientsController()<br>{<br>   db.Configuration.LazyLoadingEnabled = false;<br>}<br>```  </p>
 </li>
-<li><strong>程式碼區塊樣式</strong>：找到<code># Code Highlight theme</code>，我個人設定為黑色背景。</li>
-<li><strong>第三方服務</strong>：常用的第三方服務有『評論(Disqus)』、『google analytics』、『站內文章搜尋(swiftype)』、『facebook SDK』…等功能設定。可以依自己的喜好幫部落格加上特別的服務。只要有第三方服務的帳號，將帳號或Key複製到對應位置貼上即可。</li>
 </ol>
+<p>最後結果：<br><img src="http://i.imgur.com/QSiB0OH.png" alt="Imgur"></p>
 
       
     </div>
@@ -309,7 +329,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo/" rel="tag">#Hexo</a>
+            <a href="/tags/WebApi/" rel="tag">#WebApi</a>
           
         </div>
       
@@ -318,17 +338,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/02/28/Hexo-WriteABlog/" rel="next" title="Hexo-開始撰寫文章">
-                <i class="fa fa-chevron-left"></i> Hexo-開始撰寫文章
+              <a href="/2016/03/18/SetListContorlValue/" rel="next" title="Web Form 中顯示清單控制項(ListContorl)選單中任一數值">
+                <i class="fa fa-chevron-left"></i> Web Form 中顯示清單控制項(ListContorl)選單中任一數值
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/18/SetListContorlValue/" rel="prev" title="Web Form 中顯示清單控制項(ListContorl)選單中任一數值">
-                Web Form 中顯示清單控制項(ListContorl)選單中任一數值 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -446,7 +462,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#更換主題"><span class="nav-number">1.</span> <span class="nav-text">更換主題</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下載主題"><span class="nav-number">1.1.</span> <span class="nav-text">下載主題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新主題"><span class="nav-number">1.2.</span> <span class="nav-text">更新主題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽換Blog主題"><span class="nav-number">1.3.</span> <span class="nav-text">抽換Blog主題</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安裝Plugins"><span class="nav-number">2.</span> <span class="nav-text">安裝Plugins</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常見設定"><span class="nav-number">3.</span> <span class="nav-text">常見設定</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#根目錄下的-config-yml"><span class="nav-number">3.1.</span> <span class="nav-text">根目錄下的_config.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主題下的-config-yml"><span class="nav-number">3.2.</span> <span class="nav-text">主題下的_config.yml</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#實作Web-API-2步驟"><span class="nav-number">1.</span> <span class="nav-text">實作Web API 2步驟</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、建立Web-API專案："><span class="nav-number">1.1.</span> <span class="nav-text">一、建立Web API專案：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、建立Model："><span class="nav-number">1.2.</span> <span class="nav-text">二、建立Model：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、加入『Web-API-2控制器-空白』："><span class="nav-number">1.3.</span> <span class="nav-text">三、加入『Web API 2控制器 - 空白』：</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -711,9 +727,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'jame2408';
-      var disqus_identifier = '2016/03/05/Hexo-ThemeAndSettings/';
-      var disqus_title = 'Hexo-更換主題與基本設定';
-      var disqus_url = 'http://yoursite.com/2016/03/05/Hexo-ThemeAndSettings/';
+      var disqus_identifier = '2016/06/19/HelloMyFirsrWebApi/';
+      var disqus_title = 'Web API初體驗 - 嘗試建立WebApi';
+      var disqus_url = 'http://yoursite.com/2016/06/19/HelloMyFirsrWebApi/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
